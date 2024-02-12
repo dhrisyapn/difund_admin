@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "442297004540",
+    "project_id": "difund-app",
+    "storage_bucket": "difund-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:442297004540:android:bbe00af4c9c2b95e9d8279",
+        "android_client_info": {
+          "package_name": "com.example.difund"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjG6SDAAotjnGuyb0e7x8-3e2E7Bgvxg0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:442297004540:android:287795878149a7b29d8279",
+        "android_client_info": {
+          "package_name": "com.example.difund_admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjG6SDAAotjnGuyb0e7x8-3e2E7Bgvxg0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
