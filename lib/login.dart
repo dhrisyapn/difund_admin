@@ -130,10 +130,10 @@ class _LoginPageState extends State<LoginPage> {
                               .then((user) {
                             //if user is signed in successfully
                             //go to home page
-                            // Navigator.pushReplacement(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //         builder: (context) => const OrgPage()));
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const OrgPage()));
                           }).catchError((e) {
                             //if error, show error message
                             ScaffoldMessenger.of(context).showSnackBar(

@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:difund/donate.dart';
+
 import 'package:flutter/material.dart';
 
 class DetailsPage extends StatefulWidget {
@@ -151,34 +151,40 @@ class _DetailsPageState extends State<DetailsPage> {
                         ),
                       );
                     }),
+                SizedBox(
+                  height: 50,
+                ),
+                //delete button
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => DonatePage()));
+                    FirebaseFirestore.instance
+                        .collection('organizations')
+                        .doc(widget.docid)
+                        .delete()
+                        .then((value) => Navigator.of(context).pop());
                   },
-                  child: Padding(
-                    padding:
-                        const EdgeInsets.only(top: 30, left: 30, right: 30),
-                    child: Container(
-                      height: 50,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.white),
-                      child: Center(
-                        child: Text(
-                          "Donate",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black),
+                  child: Container(
+                    width: 123,
+                    height: 40,
+                    decoration: ShapeDecoration(
+                      color: Color(0xFFffffff),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8)),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Delete',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: const Color.fromARGB(255, 11, 8, 8),
                         ),
                       ),
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 50,
+                  height: 30,
                 )
               ],
             ),
