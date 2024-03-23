@@ -1,3 +1,4 @@
+import 'package:difund_admin/authpage.dart';
 import 'package:difund_admin/login.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -23,6 +24,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           useMaterial3: true,
         ),
-        home: LoginPage());
+        home: AuthPage());
   }
 }
