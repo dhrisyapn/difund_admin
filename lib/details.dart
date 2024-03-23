@@ -157,11 +157,11 @@ class _DetailsPageState extends State<DetailsPage> {
                 //delete button
                 GestureDetector(
                   onTap: () {
+                    Navigator.of(context).pop();
                     FirebaseFirestore.instance
                         .collection('organizations')
                         .doc(widget.docid)
-                        .delete()
-                        .then((value) => Navigator.of(context).pop());
+                        .delete();
                   },
                   child: Container(
                     width: 123,
