@@ -154,75 +154,77 @@ class _OrgPageState extends State<OrgPage> {
             left: 0,
             right: 0,
             child: Center(
-              child: GestureDetector(
-                onTap: () {
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      TextEditingController nameController =
-                          TextEditingController();
-                      TextEditingController descriptionController =
-                          TextEditingController();
-                      return AlertDialog(
-                        title: Text('Add Organization'),
-                        content: SizedBox(
-                          height: 120,
-                          child: Column(
-                            children: <Widget>[
-                              TextField(
-                                controller: nameController,
-                                decoration: InputDecoration(
-                                    hintText: "Enter organization name"),
-                              ),
-                              TextField(
-                                controller: descriptionController,
-                                decoration: InputDecoration(
-                                    hintText: "Enter organization description"),
-                              ),
-                            ],
+              child: Container(
+                width: 60,
+                height: 60,
+                decoration: ShapeDecoration(
+                  color: Color(0xFFFFFFFF),
+                  shape: OvalBorder(),
+                ),
+                child: GestureDetector(
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        TextEditingController nameController =
+                            TextEditingController();
+                        TextEditingController descriptionController =
+                            TextEditingController();
+                        return AlertDialog(
+                          title: Text('Add Organization'),
+                          content: SizedBox(
+                            height: 120,
+                            child: Column(
+                              children: <Widget>[
+                                TextField(
+                                  controller: nameController,
+                                  decoration: InputDecoration(
+                                      hintText: "Enter organization name"),
+                                ),
+                                TextField(
+                                  controller: descriptionController,
+                                  decoration: InputDecoration(
+                                      hintText:
+                                          "Enter organization description"),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                        actions: <Widget>[
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.of(context).pop();
-                            },
-                            child: const Text('Cancel'),
-                          ),
-                          GestureDetector(
-                            onTap: () async {
-                              if (nameController.text.isNotEmpty &&
-                                  descriptionController.text.isNotEmpty) {
-                                await FirebaseFirestore.instance
-                                    .collection('organizations')
-                                    .add({
-                                  'name': nameController.text,
-                                  'desc': descriptionController.text,
-                                  'image':
-                                      'https://firebasestorage.googleapis.com/v0/b/difund-app.appspot.com/o/care.png?alt=media&token=ed349303-1d49-43ed-a1a3-1556c04266ab',
-                                  'total': '0'
-                                });
+                          actions: <Widget>[
+                            GestureDetector(
+                              onTap: () {
                                 Navigator.of(context).pop();
-                              } else {
-                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                                    content: Text(
-                                        'Error: All fields must be filled out.')));
-                              }
-                            },
-                            child: const Text('Add'),
-                          ),
-                        ],
-                      );
-                    },
-                  );
-                },
-                child: Container(
-                  width: 60,
-                  height: 60,
-                  decoration: ShapeDecoration(
-                    color: Color(0xFFFFFFFF),
-                    shape: OvalBorder(),
-                  ),
+                              },
+                              child: const Text('Cancel'),
+                            ),
+                            GestureDetector(
+                              onTap: () async {
+                                if (nameController.text.isNotEmpty &&
+                                    descriptionController.text.isNotEmpty) {
+                                  await FirebaseFirestore.instance
+                                      .collection('organizations')
+                                      .add({
+                                    'name': nameController.text,
+                                    'desc': descriptionController.text,
+                                    'image':
+                                        'https://firebasestorage.googleapis.com/v0/b/difund-app.appspot.com/o/care.png?alt=media&token=ed349303-1d49-43ed-a1a3-1556c04266ab',
+                                    'total': '0'
+                                  });
+                                  Navigator.of(context).pop();
+                                } else {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                          content: Text(
+                                              'Error: All fields must be filled out.')));
+                                }
+                              },
+                              child: const Text('Add'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
                   child: Center(
                     child: Text(
                       '+',
