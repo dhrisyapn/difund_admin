@@ -1,16 +1,24 @@
-# difund_admin
+# DiFund Admin
 
-A new Flutter project.
+DiFund is an Android application on a mission to transform disaster relief by harnessing the power of blockchain technology. This innovative approach tackles the long-standing issue of opacity in traditional disaster fund management systems. DiFund utilizes a secure, public ledger powered by blockchain to record every single transaction involving disaster funds. It creates a transparent and tamper-proof record accessible to anyone with an internet connection. By enabling users to verify how funds are utilized, DiFund fosters trust and accountability within the entire disaster relief ecosystem.
 
-## Getting Started
+![](UI/1.jpg)
+![](UI/2.jpg)
+![](UI/3.jpg)
+![](UI/4.png)
 
-This project is a starting point for a Flutter application.
+## Installation
 
-A few resources to get you started if this is your first Flutter project:
+1. Clone the repository: `git clone https://github.com/dhrisyapn/difund_admin.git`
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. Open the project in your preferred development environment (e.g., Android Studio, Visual Studio Code).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. Build and run the app on your preferred device or emulator.
+
+## Contributing
+
+Contributions are welcome! If you find any issues or want to add new features to the app, feel free to submit a pull request. Please make sure to follow the project's code style and guidelines.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md).
